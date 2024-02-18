@@ -1,0 +1,40 @@
+# №5
+import re
+def max_cyr(input_string):
+    # Используем регулярное выражение для поиска всех последовательностей кириллических символов
+    sequences = re.findall(r'[а-я]+', input_string, flags=re.IGNORECASE)
+    # Находим длину самой длинной последовательности
+    max_length = max(len(seq) for seq in sequences)
+    return max_length
+input_string = "Привет я обожаю орфографию"
+max_sequence_length = max_cyr(input_string)
+print("Наибольшее количество идущих подряд символов кириллицы:", max_sequence_length)
+
+# №7
+import re
+
+def find_min_number(input_string):
+    # Используем регулярное выражение для поиска всех натуральных чисел в строке
+    numbers = re.findall(r'\b\d+\b', input_string)
+    # Преобразуем найденные числа в список целых чисел
+    numbers = [int(num) for num in numbers]
+    # Находим минимальное число
+    min_number = min(numbers)
+    return min_number
+
+input_string = "10, 5, 25, и 3. Найдем минимальное."
+min_number = find_min_number(input_string)
+print("Минимальное число в строке:", min_number)
+
+# №14
+import re
+
+def find_max_digit_sequence(input_string):
+    # Используем регулярное выражение для поиска всех последовательностей цифр в строке
+    digit_sequences = re.findall(r'\d+', input_string)
+    # Находим последовательность с максимальной длиной
+    max_sequence = max(digit_sequences, key=len, default="")
+    return max_sequence
+input_string = "1 22 333 4444 55555 666666"
+max_sequence = find_max_digit_sequence(input_string)
+print("Наибольшая последовательность цифр в строке:", max_sequence)
