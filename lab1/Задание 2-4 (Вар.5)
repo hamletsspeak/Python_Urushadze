@@ -27,7 +27,7 @@ if palindrom(input_string):
 else:
     print("Строка не образует палиндром.")
 
-# 14
+# №14
 def sort_words(input_string):
     # Разбиваем строку на слова
     words = input_string.split()
