@@ -1,0 +1,80 @@
+# №5
+def is_global_minimum(arr, index):
+    # Проверяем, является ли элемент по указанному индексу глобальным минимумом
+    if arr[index] == min(arr):
+        return True
+    else:
+        return False
+
+# Пример использования
+arr = [3, 5, 2, 8, 1, 6]
+index = 4
+if is_global_minimum(arr, index):
+    print(f"Элемент по индексу {index} является глобальным минимумом.")
+else:
+    print(f"Элемент по индексу {index} не является глобальным минимумом.")
+
+# № 17
+def swap_min_max(arr):
+    # Находим индексы минимального и максимального элементов массива
+    min_index = arr.index(min(arr))
+    max_index = arr.index(max(arr))
+    # Меняем местами минимальный и максимальный элементы
+    arr[min_index], arr[max_index] = arr[max_index], arr[min_index]
+
+# Пример использования
+array = [3, 7, 2, 8, 1, 6]
+print("Исходный массив:", array)
+swap_min_max(array)
+print("Массив после замены минимального и максимального элементов:", array)
+
+# № 29
+def is_max_in_interval(arr, a, b):
+    # Находим максимальный элемент массива
+    max_element = max(arr)
+    # Проверяем, находится ли максимальный элемент в интервале a..b
+    if a <= max_element <= b:
+        return True
+    else:
+        return False
+
+# Пример использования
+array = [3, 7, 12, 8, 10, 6]
+a = 5
+b = 15
+if is_max_in_interval(array, a, b):
+    print(f"Максимальный элемент массива находится в интервале от {a} до {b}.")
+else:
+    print(f"Максимальный элемент массива не находится в интервале от {a} до {b}.")
+
+# № 41
+def average_abs(arr):
+    # Если массив пуст, возвращаем 0
+    if not arr:
+        return 0
+
+    # Вычисляем сумму модулей элементов массива
+    abs_sum = sum(abs(num) for num in arr)
+    # Находим среднее арифметическое модулей элементов массива
+    avg_abs = abs_sum / len(arr)
+    return avg_abs
+
+
+# Пример использования
+array = [3, -7, 12, -8, 10, -6]
+avg_abs = average_abs(array)
+print("Среднее арифметическое модулей элементов массива:", avg_abs)
+
+# № 53
+def filter_list(arr):
+    # Находим среднее арифметическое и максимальное значение списка
+    avg = sum(arr) / len(arr)
+    max_val = max(arr)
+
+    # Строим новый список с элементами, большими, чем среднее арифметическое, и меньшими, чем максимальное значение
+    new_list = [x for x in arr if x > avg and x < max_val]
+    return new_list
+
+input_list = [3, 7, 12, 8, 10, 6]
+new_list = filter_list(input_list)
+print("Новый список:", new_list)
