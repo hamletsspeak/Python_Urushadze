@@ -1,0 +1,41 @@
+# №5
+import random
+def shuffle_string(input_string):
+    # Преобразуем строку в список символов
+    characters = list(input_string)
+    # Перемешиваем список символов
+    random.shuffle(characters)
+    # Объединяем перемешанные символы в строку
+    shuffled_string = ''.join(characters)
+    return shuffled_string
+input_string = "Привет, я пример"
+shuffled_string = shuffle_string(input_string)
+print("Исходная строка:", input_string)
+print("Перемешанная строка:", shuffled_string)
+
+# №7
+def palindrom(input_string):
+    # Преобразуем строку к нижнему регистру для удобства сравнения
+    input_string = input_string.lower()
+    # Удаляем все символы, не являющиеся буквами
+    input_string = ''.join(char for char in input_string if char.isalpha())
+    # Проверяем, является ли строка палиндромом
+    return input_string == input_string[::-1]
+input_string = "A man, a plan, a canal, Panama"
+if palindrom(input_string):
+    print("Строка образует палиндром.")
+else:
+    print("Строка не образует палиндром.")
+
+# 14
+def sort_words(input_string):
+    # Разбиваем строку на слова
+    words = input_string.split()
+    # Сортируем слова по их длине с использованием ключа сортировки
+    sorted_words = sorted(words, key=len)
+    # Объединяем отсортированные слова обратно в строку
+    sorted_string = ' '.join(sorted_words)
+    return sorted_string
+input_string = "Привет это новая программа"
+sorted_string = sort_words(input_string)
+print("Отсортированная строка:", sorted_string)
